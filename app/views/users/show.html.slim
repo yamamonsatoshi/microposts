@@ -1,3 +1,6 @@
 h1
   = gravatar_for @user
   = @user.name
+  
+button.btn.btn-default
+  = link_to "ユーザー情報の更新", edit_user_path(@user)

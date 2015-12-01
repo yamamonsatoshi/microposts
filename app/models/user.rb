@@ -8,6 +8,10 @@
 #  password_digest :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  profile         :text
+#  prefecture      :string
+#  gender          :string
+#  generation      :string
 #
 
 class User < ActiveRecord::Base
@@ -17,5 +21,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 }, 
     format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: { case_sensitive: false }
+  validates :gender, presence: true, on: :update
+  validates :prefecture, presence: true, on: :update
   has_secure_password
 end
