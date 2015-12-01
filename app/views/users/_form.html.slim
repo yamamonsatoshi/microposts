@@ -11,11 +11,14 @@
         = f.text_field :email, :class => "form-control"
 
       .form-group
-        = f.label :gender
-        = f.radio_button :gender, '女', :class => "form-control", :checked => true, :value => 1
-        = f.label :gender, '女', :value=>1
-        = f.radio_button :gender, '男', :class => "form-control", :value => 2
-        = f.label :gender, '男', :value=>2
+        div
+          = f.label :gender
+        = f.label :gender, value: 1, class: "radio-inline" do
+          = f.radio_button :gender, 1, class: "form-control", checked: true
+          = '女'
+        = f.label :gender, value: 2, class: "radio-inline" do
+          = f.radio_button :gender, 2, class: "form-control"
+          = '男'
 
       .form-group
         = f.label :prefecture

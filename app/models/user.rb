@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 }, 
     format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: { case_sensitive: false }
-  validates :gender, presence: true
-  validates :prefecture, presence: true
+  validates :gender, presence: true, on: :update
+  validates :prefecture, presence: true, on: :update
   has_secure_password
 end

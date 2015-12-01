@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include SessionsHelper
-  before_action :set_variables, only: [:edit, :new, :create]
-  before_action :ensure_login_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_variables, only: [:edit, :new, :update, :create]
+  before_action :ensure_login_user, only: [:edit, :update, :destroy]
 
   # GET /users/1
   def show
@@ -54,7 +54,11 @@ class UsersController < ApplicationController
       if user == current_user
         # do nothing
       else
-        redirect_to current_user, notice: "You can't access the other's page" 
+        if logged_in?
+          redirect_to current_user, notice: "You can't access the other's page"
+        else
+          redirect_to login_url, notice: "Please log in!" 
+        end
       end
     end
 
