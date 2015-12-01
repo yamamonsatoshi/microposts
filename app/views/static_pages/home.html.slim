@@ -1,5 +1,12 @@
-h1 StaticPages#home
-p Find me in app/views/static_pages/home.html.slim
+- if logged_in?
+  .row
+    aside.col-md-4
+      section.user_info
+        = render 'shared/user_info'
+      section.micropost_form
+        = render 'shared/micropost_form'
+- else
+  .center.jumbotron
+    h1 Welcome to the Microposts
+    = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"
 
-p こちらがトップページとなります。
-p まだ何も書いてないです。
