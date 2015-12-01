@@ -3,8 +3,18 @@
 
 /* universal */
 
+html {
+  height: 100%;
+  
+}
+
 body {
+  height: 100%;
   padding-top: 60px;
+}
+
+#main {
+  padding-bottom: 120px;
 }
 
 section {
@@ -22,6 +32,7 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+
 
 /* typography */
 
@@ -110,4 +121,10 @@ input {
   width: 80%;
   display: inline-block;
   border: 1px solid #f00;
+}
+
+
+.footer {
+  background-color: #eee;
+  min-height: 60px;
 }
