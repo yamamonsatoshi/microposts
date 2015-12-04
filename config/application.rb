@@ -32,5 +32,7 @@ module Microposts
     config.action_view.field_error_proc = proc { |html_tag, instance|
       "<div class='has-error'>#{html_tag}</div>".html_safe
     }
+    
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
