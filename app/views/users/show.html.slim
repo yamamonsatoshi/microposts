@@ -1,6 +1,18 @@
 h1
   = gravatar_for @user
   = @user.name
-  
-button.btn.btn-default
-  = link_to "ユーザー情報の更新", edit_user_path(@user)
+.user_details.table-responsive
+  table.table.table-bordered.table-hover
+    tbody
+      tr 
+        th 性別
+        td = @user.gender
+      tr 
+        th 年代
+        td = @user.generation
+      tr 
+        th 地域
+        td = @user.prefecture
+      tr 
+        th 一言！
+        td = @user.profile

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  include SessionsHelper
   before_action :set_variables, only: [:edit, :new, :update, :create]
   before_action :ensure_login_user, only: [:edit, :update, :destroy]
 

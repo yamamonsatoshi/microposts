@@ -6,7 +6,7 @@ h1 Sign up
       = render 'shared/error_messages', object: f.object
 
       = f.label :name
-      = f.email_field :name, :class => 'form-control'
+      = f.text_field :name, :class => 'form-control'
 
       = f.label :email
       = f.email_field :email, :class => 'form-control'
