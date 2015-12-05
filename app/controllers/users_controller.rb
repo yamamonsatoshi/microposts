@@ -47,6 +47,18 @@ class UsersController < ApplicationController
     # TODO write destroy
   end
   
+  # followしているユーザ
+  def followings
+    @user = User.find(params[:id])
+    @following_users = @user.following_users
+  end
+
+  # followされているユーザ  
+  def followers
+    @user =  User.find(params[:id])
+    @follower_users = @user.follower_users
+  end
+  
   private
     # curreent_userとrequest idのuserが異なれば、redirectではじく
     def ensure_login_user
