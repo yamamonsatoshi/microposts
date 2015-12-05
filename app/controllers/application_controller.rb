@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+
 end
