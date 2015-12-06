@@ -1,29 +1,19 @@
 .row
   aside.col-md-4
-    section.user_info
-      h1
-        = gravatar_for @user
-        = @user.name
-      .user_details.table-responsive
-        table.table.table-bordered.table-hover
-          tbody
-            tr 
-              th 性別
-              td = @user.gender
-            tr 
-              th 年代
-              td = @user.generation
-            tr 
-              th 地域
-              td = @user.prefecture
-            tr 
-              th 一言！
-              td = @user.profile
+    = render 'user_section'
   .col-md-8
     = render 'follow_form' if logged_in?
-    h3 Your Followers (#{@follower_users.count})
+    h3
+      = "#{@user.name} Followers (#{@follower_users.count})"
     .row
       - @follower_users.each do |follower|
         .col-md-3.follow-box
-          = gravatar_for follower
-          = link_to follower.name, user_path(follower.id)
+          .profile-img
+            = gravatar_for follower
+          .profiles
+            ul 
+              li = link_to follower.name, user_path(follower.id)
+              li = follower.gender
+              li = follower.generation
+              li = follower.prefecture
+              li = follower.profile

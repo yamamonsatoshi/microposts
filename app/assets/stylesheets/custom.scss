@@ -217,7 +217,18 @@ span.picture {
 /* user show page */
 .user_details{
   width: 60%;
-  margin: 0 auto;
+}
+
+.table{
+  width: 100%;
+}
+
+#user-table{
+  word-break: break-all;
+}
+
+#user-show-profile{
+    max-width: 150px;
 }
 
 /* user follow page*/
@@ -228,4 +239,20 @@ span.picture {
   background: #eee;
   border: 1px solid #aaa; 
   border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-img{
+  margin-left: 10px;
+}
+
+.profiles{
+  clear: left;
+
+  ul{
+    padding-left: 10px;
+    list-style-type: none;
+  }
 }

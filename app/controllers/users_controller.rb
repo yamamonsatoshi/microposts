@@ -47,13 +47,13 @@ class UsersController < ApplicationController
     # TODO write destroy
   end
   
-  # followしているユーザ
+  # POST  /users/1/followings followしているユーザ
   def followings
     @user = User.find(params[:id])
     @following_users = @user.following_users
   end
 
-  # followされているユーザ  
+  # POST  /users/1/followers followされているユーザ  
   def followers
     @user =  User.find(params[:id])
     @follower_users = @user.follower_users
