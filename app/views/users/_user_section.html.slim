@@ -7,7 +7,7 @@ section.user_info
       tbody
         tr 
           th 性別
-          td = @user.gender
+          td = @gender_hash[@user.gender]
         tr 
           th 年代
           td = @user.generation
@@ -17,3 +17,9 @@ section.user_info
         tr 
           th 一言！
           td#user-show-profile = @user.profile
+    p
+      button.btn.btn-default
+        = link_to "Followerings", followings_user_path(@user)
+    p
+      button.btn.btn-default
+        = link_to "Followers", followers_user_path(@user)

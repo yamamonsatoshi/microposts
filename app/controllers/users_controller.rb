@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_variables, only: [:edit, :new, :update, :create]
+  before_action :set_variables, only: [:edit, :new, :update, :create, :followings, :followers, :show]
   before_action :ensure_login_user, only: [:edit, :update, :destroy]
 
   # GET /users/1
@@ -139,6 +139,9 @@ class UsersController < ApplicationController
     	"50代" => "50代",
     	"60代以降" => "60代以降",
       }
+      
+      @gender_hash = {"1" => '女', "2" => '男'}
+      
     end
     
 

@@ -13,7 +13,7 @@
           .profiles
             ul 
               li = link_to follower.name, user_path(follower.id)
-              li = follower.gender
+              li = @gender_hash[follower.gender]
               li = follower.generation
               li = follower.prefecture
               li = follower.profile
