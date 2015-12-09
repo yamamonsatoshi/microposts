@@ -19,7 +19,8 @@ section.user_info
           td#user-show-profile = @user.profile
     p
       button.btn.btn-default
-        = link_to "Followerings", followings_user_path(@user)
+        = link_to "Followerings", followings_user_path(@user), :class=>"btn-follow"
     p
       button.btn.btn-default
-        = link_to "Followers", followers_user_path(@user)
+        = link_to "Followers", followers_user_path(@user), :class=>"btn-follow"
+
