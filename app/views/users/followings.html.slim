@@ -1,0 +1,19 @@
+.row
+  aside.col-md-4
+    = render 'user_section'
+  .col-md-8
+    = render 'follow_form' if logged_in?
+    h3 
+      = "#{@user.name} Followings (#{@following_users.count})"
+    .row
+      - @following_users.each do |following|
+        .col-md-3.follow-box
+          .profile-img
+            = gravatar_for following
+          .profiles
+            ul 
+              li = link_to following.name, user_path(following.id)
+              li = @gender_hash[following.gender]
+              li = following.generation
+              li = following.prefecture
+              li = following.profile

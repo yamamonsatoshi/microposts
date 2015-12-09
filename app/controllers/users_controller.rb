@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_variables, only: [:edit, :new, :update, :create]
+  before_action :set_variables, only: [:edit, :new, :update, :create, :followings, :followers, :show]
   before_action :ensure_login_user, only: [:edit, :update, :destroy]
 
   # GET /users/1
@@ -45,6 +45,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     # TODO write destroy
+  end
+  
+  # POST  /users/1/followings followしているユーザ
+  def followings
+    @user = User.find(params[:id])
+    @following_users = @user.following_users
+  end
+
+  # POST  /users/1/followers followされているユーザ  
+  def followers
+    @user =  User.find(params[:id])
+    @follower_users = @user.follower_users
   end
   
   private
@@ -127,6 +139,9 @@ class UsersController < ApplicationController
     	"50代" => "50代",
     	"60代以降" => "60代以降",
       }
+      
+      @gender_hash = {"1" => '女', "2" => '男'}
+      
     end
     
 

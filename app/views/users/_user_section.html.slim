@@ -1,0 +1,24 @@
+section.user_info
+  h1
+    = gravatar_for @user
+    = @user.name
+  .user_details.table-responsive
+    table.table.table-bordered.table-hover#user-table
+      tbody
+        tr 
+          th 性別
+          td = @gender_hash[@user.gender]
+        tr 
+          th 年代
+          td = @user.generation
+        tr 
+          th 地域
+          td = @user.prefecture
+        tr 
+          th 一言！
+          td#user-show-profile = @user.profile
+    p
+      = link_to "Followerings", followings_user_path(@user), :class=>"btn btn-default"
+    p
+      = link_to "Followers", followers_user_path(@user), :class=>"btn btn-default"
+
