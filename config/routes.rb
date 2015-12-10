@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get 'followings'
       get 'followers'
     end
+    collection do
+      get 'show_great_tweet'
+    end
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts

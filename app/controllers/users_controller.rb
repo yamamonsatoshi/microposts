@@ -47,6 +47,12 @@ class UsersController < ApplicationController
     # TODO write destroy
   end
   
+  # GET /users/show_great_tweet
+  def show_great_tweet
+    gt = GreatTweet.all.sample
+    redirect_to :back, notice: "【#{gt.name}】　〜#{gt.detail}〜" 
+  end
+  
   # POST  /users/1/followings followしているユーザ
   def followings
     @user = User.find(params[:id])
