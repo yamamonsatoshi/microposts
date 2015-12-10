@@ -3,8 +3,11 @@
     = render 'user_section'
   .col-md-8
     = render 'follow_form' if logged_in?
+
+    = page_entries_info @microposts
     - if @user.microposts.any?
       h3 Microposts (#{@user.microposts.count})
       ol.microposts
         = render @microposts
+    = paginate @microposts
 
