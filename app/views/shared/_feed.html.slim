@@ -1,3 +1,5 @@
+= page_entries_info @feed_items
 - if @feed_items.any?
   ol.microposts
     = render @feed_items
+= paginate @feed_items 
